@@ -75,6 +75,41 @@ Run the crawler with a base URL:
 python run.py https://developer.example.com/docs
 ```
 
+### Private Documentation Crawling
+
+For crawling private documentation that requires authentication, use `run-private.py` with your browser profile. This approach opens a browser window where you can manually log in, and then the crawler will use your authenticated session to access protected content.
+
+```bash
+python run-private.py https://your-private-site.com/docs \
+  --user-profile-dir "/path/to/browser/profile" \
+  --output ./private_docs \
+  --noresume
+```
+
+#### Browser Profile Locations
+
+- **Chrome/Chromium (default)**: `~/Library/Application Support/Google/Chrome/Default`
+- **Microsoft Edge**: `~/Library/Application Support/Microsoft Edge/Default`
+- **Firefox**: `~/Library/Application Support/Firefox/Profiles/[profile-id]`
+
+#### Tips for Private Crawling
+
+- The browser will open in non-headless mode so you can log in manually if needed
+- Use `--noresume` for a fresh crawl if you encounter issues
+- Set `--max-depth` to limit how deep the crawler will go (e.g., `--max-depth 3`)
+- The crawler processes pages sequentially to avoid overwhelming authentication systems
+
+#### Additional Options for Private Crawling
+
+| Option                | Description                         | Default   |
+|-----------------------|-------------------------------------|-----------|
+| `--user-profile-dir`  | Path to browser profile with login state | Required |
+| `--browser-type`      | Browser type (chromium, firefox, webkit) | chromium |
+| `--browser-dir`       | Path to browser executable          | None      |
+| `--timeout`           | Request timeout in seconds          | 30        |
+
+Note: The browser profile directory must contain your authenticated session. For Chrome on macOS, this is typically located at `~/Library/Application Support/Google/Chrome/Default`.
+
 ### Advanced Command Options
 
 Customize the crawl with additional parameters:
