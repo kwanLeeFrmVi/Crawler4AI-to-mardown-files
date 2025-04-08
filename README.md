@@ -1,6 +1,12 @@
 # Documentation Crawler
+<a href="https://github.com/unclecode/crawl4ai">
+  <img src="https://raw.githubusercontent.com/unclecode/crawl4ai/main/docs/assets/powered-by-dark.svg" alt="Powered by Crawl4AI" width="200"/>
+</a>
 
-![Project Banner](https://via.placeholder.com/800x200?text=Documentation+Crawler)  
+``` 
+This project uses Crawl4AI (https://github.com/unclecode/crawl4ai) for web data extraction.
+```
+
 [![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A high-performance Python tool for crawling and archiving documentation websites as properly linked markdown files.
