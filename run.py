@@ -149,6 +149,8 @@ class DocumentationCrawler:
 
         self.browser_config = BrowserConfig(
             headless=True,
+            viewport_width=650,
+            viewport_height=2000,
             verbose=False
         )
 
@@ -157,7 +159,9 @@ class DocumentationCrawler:
             exclude_external_links=True,
             remove_overlay_elements=True,
             process_iframes=True,
-            cache_mode=CacheMode.ENABLED,
+            cache_mode=CacheMode.DISABLED,
+            excluded_tags=["form", "header", "footer"],
+            excluded_selector=".header, .footer, .rm-Header",
             verbose=False
         )
 
